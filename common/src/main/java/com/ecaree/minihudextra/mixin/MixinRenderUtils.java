@@ -8,7 +8,12 @@ import fi.dy.masa.malilib.util.GuiUtils;
 import fi.dy.masa.minihud.event.RenderHandler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.render.Tessellator;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.OrderedText;
+import net.minecraft.text.Text;
+import net.minecraft.util.math.ColorHelper.Argb;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -17,11 +22,14 @@ import java.util.List;
 
 @Mixin(RenderHandler.class)
 public class MixinRenderUtils {
-    @Redirect(method = "onRenderGameOverlayPost",
-            at = @At(value = "INVOKE",
-                    target = "Lfi/dy/masa/malilib/render/RenderUtils;renderText(IIDIILfi/dy/masa/malilib/config/HudAlignment;ZZLjava/util/List;Lnet/minecraft/client/util/math/MatrixStack;)I"))
+    @Redirect(
+            method = "onRenderGameOverlayPost",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lfi/dy/masa/malilib/render/RenderUtils;renderText(IIDIILfi/dy/masa/malilib/config/HudAlignment;ZZLjava/util/List;Lnet/minecraft/client/util/math/MatrixStack;)I")
+    )
     private int onRenderText(int xOff, int yOff, double scale, int textColor, int bgColor, HudAlignment alignment, boolean useBackground, boolean useShadow, List<String> lines, MatrixStack matrixStack) {
-        if (!Configs.Generic.MODIFY_COLORS.getBooleanValue()) return RenderUtils.renderText(xOff, yOff, scale, textColor, bgColor, alignment, useBackground, useShadow, lines, matrixStack);
+        if (!Configs.Generic.MODIFY_COLORS.getBooleanValue() && !Configs.Generic.TEXT_OUTLINE.getBooleanValue()) return RenderUtils.renderText(xOff, yOff, scale, textColor, bgColor, alignment, useBackground, useShadow, lines, matrixStack);
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         final int scaledWidth = GuiUtils.getScaledWindowWidth();
         final int lineHeight = fontRenderer.fontHeight + 2;
@@ -100,8 +108,12 @@ public class MixinRenderUtils {
             String line = lines.get(i);
             int lineColor;
 
-            if (i < colorValues.length) {
-                lineColor = colorValues[i];
+            if (Configs.Generic.MODIFY_COLORS.getBooleanValue()) {
+                if (i < colorValues.length) {
+                    lineColor = colorValues[i];
+                } else {
+                    lineColor = textColor;
+                }
             } else {
                 lineColor = textColor;
             }
@@ -127,7 +139,19 @@ public class MixinRenderUtils {
                 RenderUtils.drawRect(x - bgMargin, y - bgMargin, width + bgMargin, bgMargin + fontRenderer.fontHeight, bgColor);
             }
 
-            if (useShadow) {
+            if (Configs.Generic.TEXT_OUTLINE.getBooleanValue()) {
+                VertexConsumerProvider.Immediate immediate = VertexConsumerProvider.immediate(Tessellator.getInstance().getBuffer());
+                OrderedText orderedText = Text.of(line).asOrderedText();
+                int outlineColor;
+
+                if (Configs.Generic.AUTO_OUTLINE_COLOR.getBooleanValue()) {
+                    outlineColor = autoOutlineColor(lineColor);
+                } else {
+                    outlineColor = Configs.Colors.OUTLINE_COLOR.getIntegerValue();
+                }
+                fontRenderer.drawWithOutline(orderedText, x, y, lineColor, outlineColor, matrixStack.peek().getPositionMatrix(), immediate, 15728880);
+                immediate.draw();
+            } else if (useShadow) {
                 fontRenderer.drawWithShadow(matrixStack, line, x, y, lineColor);
             } else {
                 fontRenderer.draw(matrixStack, line, x, y, lineColor);
@@ -140,5 +164,17 @@ public class MixinRenderUtils {
         }
 
         return contentHeight + bgMargin * 2;
+    }
+
+    private static int autoOutlineColor(int color) {
+        if ((color & 0x00FFFFFF) == 0x000000) {
+            return 0xFFFFFFFF;
+        } else {
+            double brightness = Configs.Generic.OUTLINE_COLOR_BRIGHTNESS.getDoubleValue();
+            int r = (int)((double) Argb.getRed(color) * brightness);
+            int g = (int)((double) Argb.getGreen(color) * brightness);
+            int b = (int)((double) Argb.getBlue(color) * brightness);
+            return Argb.getArgb(0, r, g, b);
+        }
     }
 }

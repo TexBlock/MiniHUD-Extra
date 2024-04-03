@@ -7,9 +7,7 @@ import com.google.gson.JsonObject;
 import fi.dy.masa.malilib.config.ConfigUtils;
 import fi.dy.masa.malilib.config.IConfigBase;
 import fi.dy.masa.malilib.config.IConfigHandler;
-import fi.dy.masa.malilib.config.options.ConfigBoolean;
-import fi.dy.masa.malilib.config.options.ConfigColor;
-import fi.dy.masa.malilib.config.options.ConfigHotkey;
+import fi.dy.masa.malilib.config.options.*;
 import fi.dy.masa.malilib.hotkeys.IHotkey;
 import fi.dy.masa.malilib.util.FileUtils;
 import fi.dy.masa.malilib.util.JsonUtils;
@@ -20,15 +18,19 @@ import java.util.List;
 public class Configs implements IConfigHandler {
     private static final String CONFIG_FILE_NAME = MiniHUDExtra.MOD_ID + ".json";
     public static class Generic {
+        public static final ConfigHotkey OPEN_CONFIG_GUI = new ConfigHotkey("openConfigGui", "Z,C", "A hotkey to open the in-game Config GUI");
         public static final ConfigBoolean MODIFY_COLORS = new ConfigBoolean("modifyColors", true, "Whether or not applying the color changes");
+        public static final ConfigBoolean TEXT_OUTLINE = new ConfigBoolean("textOutline", false, "Whether or not applying the text outline");
+        public static final ConfigBoolean AUTO_OUTLINE_COLOR = new ConfigBoolean("autoOutlineColor", false, "When enabled, the text outline color will automatically change based on the text color and outline color brightness");
+        public static final ConfigDouble OUTLINE_COLOR_BRIGHTNESS = new ConfigDouble("outlineColorBrightness", 0.4, 0, 1, "The brightness that applys to the outline color\n0.4 is the effect of glow ink sac");
         public static final ConfigBoolean FTB_ULTIMINE_SUPPORT = new ConfigBoolean("ftbUltimineSupport", true, "Automatically disables MiniHUD when FTB Ultimine is active, preventing the overlap between the two HUDs\nRequires FTB Ultimine to be loaded");
         public static final ConfigBoolean MINIHUD_I18N = new ConfigBoolean("minihudI18n", true, "Whether or not applying i18n support for text displayed by MiniHUD\nForge only, for Fabric, use Masa Gadget instead");
-        public static final ConfigHotkey OPEN_CONFIG_GUI = new ConfigHotkey("openConfigGui", "Z,C", "A hotkey to open the in-game Config GUI");
-        public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(MODIFY_COLORS, FTB_ULTIMINE_SUPPORT, MINIHUD_I18N, OPEN_CONFIG_GUI);
+        public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(OPEN_CONFIG_GUI, MODIFY_COLORS, TEXT_OUTLINE, AUTO_OUTLINE_COLOR, OUTLINE_COLOR_BRIGHTNESS, FTB_ULTIMINE_SUPPORT, MINIHUD_I18N);
         public static final List<IHotkey> HOTKEY_LIST = ImmutableList.of(OPEN_CONFIG_GUI);
     }
 
     public static class Colors {
+        public static final ConfigColor OUTLINE_COLOR = new ConfigColor("outlineColor", "#FF000000", "The outline color for the text when auto outline color is disabled");
         public static final ConfigColor LINE_ONE = new ConfigColor("lineOne", "#FFE0E0E0", "Color for line 1");
         public static final ConfigColor LINE_TWO = new ConfigColor("lineTwo", "#FFE0E0E0", "Color for line 2");
         public static final ConfigColor LINE_THREE = new ConfigColor("lineThree", "#FFE0E0E0", "Color for line 3");
@@ -81,6 +83,7 @@ public class Configs implements IConfigHandler {
         public static final ConfigColor LINE_FIFTY = new ConfigColor("lineFifty", "#FFE0E0E0", "Color for line 50");
 
         public static List<IConfigBase> OPTIONS = ImmutableList.of(
+                OUTLINE_COLOR,
                 LINE_ONE, LINE_TWO, LINE_THREE, LINE_FOUR, LINE_FIVE, LINE_SIX, LINE_SEVEN, LINE_EIGHT, LINE_NINE, LINE_TEN,
                 LINE_ELEVEN, LINE_TWELVE, LINE_THIRTEEN, LINE_FOURTEEN, LINE_FIFTEEN, LINE_SIXTEEN, LINE_SEVENTEEN, LINE_EIGHTEEN, LINE_NINETEEN, LINE_TWENTY,
                 LINE_TWENTYONE, LINE_TWENTYTWO, LINE_TWENTYTHREE, LINE_TWENTYFOUR, LINE_TWENTYFIVE, LINE_TWENTYSIX, LINE_TWENTYSEVEN, LINE_TWENTYEIGHT, LINE_TWENTYNINE, LINE_THIRTY,
