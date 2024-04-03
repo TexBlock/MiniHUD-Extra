@@ -28,8 +28,8 @@ configurations {
 }
 
 dependencies {
-    forge "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
-    modApi "dev.architectury:architectury-forge:${architectury_version}"
+    forge "net.minecraftforge:forge:${forge_minecraft_version}-${forge_version}"
+    modApi "dev.architectury:architectury-forge:${forge_architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -46,7 +46,7 @@ processResources {
             forge_loader_version_range: forge_loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, mod_repo: mod_repo,
-            architectury_dependency: architectury_dependency, bocchud_dependency: bocchud_dependency
+            architectury_dependency: architectury_dependency, forge_bocchud_dependency: forge_bocchud_dependency
     ]
     inputs.properties replaceProperties
 

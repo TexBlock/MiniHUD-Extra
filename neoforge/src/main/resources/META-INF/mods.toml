@@ -35,13 +35,13 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="architectury"
 type="required"
-versionRange="[${neoforge_architectury_dependency},)"
+versionRange="[${architectury_dependency},)"
 ordering="AFTER"
 side="BOTH"
 
 [[dependencies.${mod_id}]]
 modId="bocchud"
 type="required"
-versionRange="[${neoforge_bocchud_dependency},)"
+versionRange="[${bocchud_dependency},)"
 ordering="NONE"
 side="BOTH"

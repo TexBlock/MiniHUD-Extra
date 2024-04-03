@@ -21,14 +21,14 @@ configurations {
 
 dependencies {
     neoForge "net.neoforged:neoforge:${neoforge_version}"
-    modApi "dev.architectury:architectury-neoforge:${neoforge_architectury_version}"
+    modApi "dev.architectury:architectury-neoforge:${architectury_version}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
     modApi 'curse.maven:bocchud-916504:5122675' // 0.1.0-mc1.20.4
-    modApi 'curse.maven:ftb-library-404465:5051953' // forge-2001.1.5
-    modApi 'curse.maven:ftb-ultimine-386134:5005006' // forge-2001.1.4
+    modApi 'curse.maven:ftb-library-404465:5205161' // neoforge-2004.2.1
+    modApi 'curse.maven:ftb-ultimine-386134:5204156' // neoforge-2004.1.0
     modApi 'maven.modrinth:mafglib:0.1.4-mc1.20.4' // 0.1.4-mc1.20.4
     modApi 'com.github.ThinkingStudios:ForgedNetworkingAPI:0.1.0-mc1.20.4'
 }
@@ -39,7 +39,7 @@ processResources {
             neoforge_loader_version_range: neoforge_loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description, mod_repo: mod_repo,
-            neoforge_architectury_dependency: neoforge_architectury_dependency, neoforge_bocchud_dependency: neoforge_bocchud_dependency
+            architectury_dependency: architectury_dependency, bocchud_dependency: bocchud_dependency
     ]
     inputs.properties replaceProperties
 

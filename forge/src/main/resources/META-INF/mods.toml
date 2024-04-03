@@ -36,6 +36,6 @@ side="BOTH"
 [[dependencies.${mod_id}]]
 modId="bocchud"
 mandatory=true
-versionRange="[${bocchud_dependency},)"
+versionRange="[${forge_bocchud_dependency},)"
 ordering="NONE"
 side="BOTH"

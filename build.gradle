@@ -14,10 +14,10 @@ subprojects {
         silentMojangMappingsLicense()
     }
 
-    if (name == "neoforge") {
+    if (name == "forge") {
         dependencies {
-            minecraft "com.mojang:minecraft:${neoforge_minecraft_version}"
-            mappings "net.fabricmc:yarn:${neoforge_yarn_mappings}:v2"
+            minecraft "com.mojang:minecraft:${forge_minecraft_version}"
+            mappings "net.fabricmc:yarn:${forge_yarn_mappings}:v2"
         }
     } else {
         dependencies {
@@ -36,7 +36,12 @@ allprojects {
         archivesName = archives_base_name
     }
 
-    version = "${mod_version}-mc1.20.4-${name}"
+    if (name == "forge") {
+        version = "${mod_version}-mc${forge_minecraft_version}-${name}"
+    } else {
+        version = "${mod_version}-mc${minecraft_version}-${name}"
+    }
+
     group = mod_group
 
     repositories {
