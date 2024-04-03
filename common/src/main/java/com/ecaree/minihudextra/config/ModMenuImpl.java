@@ -1,6 +1,5 @@
-package com.ecaree.minihudextra.compat.modmenu;
+package com.ecaree.minihudextra.config;
 
-import com.ecaree.minihudextra.gui.GuiConfigs;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 

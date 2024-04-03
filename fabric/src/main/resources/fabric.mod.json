@@ -19,7 +19,7 @@
       "com.ecaree.minihudextra.fabric.MiniHUDExtraFabric"
     ],
     "modmenu": [
-      "com.ecaree.minihudextra.compat.modmenu.ModMenuImpl"
+      "com.ecaree.minihudextra.config.ModMenuImpl"
     ]
   },
   "mixins": [

@@ -1,7 +1,6 @@
-package com.ecaree.minihudextra.gui;
+package com.ecaree.minihudextra.config;
 
 import com.ecaree.minihudextra.MiniHUDExtra;
-import com.ecaree.minihudextra.config.Configs;
 import fi.dy.masa.malilib.gui.GuiConfigsBase;
 import fi.dy.masa.malilib.gui.button.ButtonBase;
 import fi.dy.masa.malilib.gui.button.ButtonGeneric;
