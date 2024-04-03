@@ -10,6 +10,9 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.OrderedText;
+import net.minecraft.text.Text;
+import net.minecraft.util.math.ColorHelper.Argb;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
@@ -18,11 +21,15 @@ import java.util.List;
 
 @Mixin(RenderHandler.class)
 public class MixinRenderUtils {
-    @Redirect(method = "onRenderGameOverlayPost",
-            at = @At(value = "INVOKE",
-                    target = "Lfi/dy/masa/malilib/render/RenderUtils;renderText(IIDIILfi/dy/masa/malilib/config/HudAlignment;ZZLjava/util/List;Lnet/minecraft/client/gui/DrawContext;)I"))
+    @Redirect(
+            method = "onRenderGameOverlayPost",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lfi/dy/masa/malilib/render/RenderUtils;renderText(IIDIILfi/dy/masa/malilib/config/HudAlignment;ZZLjava/util/List;Lnet/minecraft/client/gui/DrawContext;)I"
+            )
+    )
     private int onRenderText(int xOff, int yOff, double scale, int textColor, int bgColor, HudAlignment alignment, boolean useBackground, boolean useShadow, List<String> lines, DrawContext drawContext) {
-        if (!Configs.Generic.MODIFY_COLORS.getBooleanValue()) return RenderUtils.renderText(xOff, yOff, scale, textColor, bgColor, alignment, useBackground, useShadow, lines, drawContext);
+        if (!Configs.Generic.MODIFY_COLORS.getBooleanValue() && !Configs.Generic.TEXT_OUTLINE.getBooleanValue()) return RenderUtils.renderText(xOff, yOff, scale, textColor, bgColor, alignment, useBackground, useShadow, lines, drawContext);
         TextRenderer fontRenderer = MinecraftClient.getInstance().textRenderer;
         final int scaledWidth = GuiUtils.getScaledWindowWidth();
         final int lineHeight = fontRenderer.fontHeight + 2;
@@ -101,8 +108,12 @@ public class MixinRenderUtils {
             String line = lines.get(i);
             int lineColor;
 
-            if (i < colorValues.length) {
-                lineColor = colorValues[i];
+            if (Configs.Generic.MODIFY_COLORS.getBooleanValue()) {
+                if (i < colorValues.length) {
+                    lineColor = colorValues[i];
+                } else {
+                    lineColor = textColor;
+                }
             } else {
                 lineColor = textColor;
             }
@@ -127,7 +138,21 @@ public class MixinRenderUtils {
             if (useBackground) {
                 RenderUtils.drawRect(x - bgMargin, y - bgMargin, width + bgMargin, bgMargin + fontRenderer.fontHeight, bgColor);
             }
-            drawContext.drawText(fontRenderer, line, x, y, lineColor, useShadow);
+
+            if (Configs.Generic.TEXT_OUTLINE.getBooleanValue()) {
+                OrderedText orderedText = Text.literal(line).asOrderedText();
+                int outlineColor;
+
+                if (Configs.Generic.AUTO_OUTLINE_COLOR.getBooleanValue()) {
+                    outlineColor = autoOutlineColor(lineColor);
+                } else {
+                    outlineColor = Configs.Colors.OUTLINE_COLOR.getIntegerValue();
+                }
+                fontRenderer.drawWithOutline(orderedText, x , y, lineColor, outlineColor, drawContext.getMatrices().peek().getPositionMatrix(), drawContext.getVertexConsumers(), 15728880);
+                drawContext.getVertexConsumers().draw();
+            } else {
+                drawContext.drawText(fontRenderer, line, x, y, lineColor, useShadow);
+            }
         }
 
         if (scaled) {
@@ -136,5 +161,17 @@ public class MixinRenderUtils {
         }
 
         return contentHeight + bgMargin * 2;
+    }
+
+    private static int autoOutlineColor(int color) {
+        if ((color & 0x00FFFFFF) == 0x000000) {
+            return 0xFFFFFFFF;
+        } else {
+            double brightness = Configs.Generic.OUTLINE_COLOR_BRIGHTNESS.getDoubleValue();
+            int r = (int)((double) Argb.getRed(color) * brightness);
+            int g = (int)((double) Argb.getGreen(color) * brightness);
+            int b = (int)((double) Argb.getBlue(color) * brightness);
+            return Argb.getArgb(0, r, g, b);
+        }
     }
 }
