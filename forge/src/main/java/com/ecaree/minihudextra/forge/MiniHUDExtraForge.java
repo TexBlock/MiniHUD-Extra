@@ -2,7 +2,7 @@ package com.ecaree.minihudextra.forge;
 
 import com.ecaree.minihudextra.InitHandler;
 import com.ecaree.minihudextra.MiniHUDExtra;
-import com.ecaree.minihudextra.gui.GuiConfigs;
+import com.ecaree.minihudextra.config.GuiConfigs;
 import fi.dy.masa.malilib.compat.forge.ForgePlatformCompat;
 import fi.dy.masa.malilib.event.InitializationHandler;
 import net.minecraftforge.eventbus.api.IEventBus;

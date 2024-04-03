@@ -1,7 +1,5 @@
-package com.ecaree.minihudextra.hotkeys;
+package com.ecaree.minihudextra.config;
 
-import com.ecaree.minihudextra.config.Configs;
-import com.ecaree.minihudextra.gui.GuiConfigs;
 import fi.dy.masa.malilib.gui.GuiBase;
 import fi.dy.masa.malilib.hotkeys.IHotkeyCallback;
 import fi.dy.masa.malilib.hotkeys.IKeybind;

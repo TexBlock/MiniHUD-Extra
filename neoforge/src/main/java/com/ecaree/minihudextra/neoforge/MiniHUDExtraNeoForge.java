@@ -2,7 +2,7 @@ package com.ecaree.minihudextra.neoforge;
 
 import com.ecaree.minihudextra.InitHandler;
 import com.ecaree.minihudextra.MiniHUDExtra;
-import com.ecaree.minihudextra.gui.GuiConfigs;
+import com.ecaree.minihudextra.config.GuiConfigs;
 import fi.dy.masa.malilib.compat.neoforge.ForgePlatformUtils;
 import fi.dy.masa.malilib.event.InitializationHandler;
 import net.neoforged.bus.api.IEventBus;
