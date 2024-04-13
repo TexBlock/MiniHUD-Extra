@@ -22,6 +22,10 @@ import java.util.List;
 
 @Mixin(RenderHandler.class)
 public class MixinRenderUtils {
+    /**
+     * 基于
+     * https://github.com/maruohon/malilib/blob/pre-rewrite/fabric/1.18.x/src/main/java/fi/dy/masa/malilib/render/RenderUtils.java#L368-L448
+     */
     @Redirect(
             method = "onRenderGameOverlayPost",
             at = @At(
