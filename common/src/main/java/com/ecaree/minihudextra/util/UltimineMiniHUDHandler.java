@@ -1,4 +1,4 @@
-package com.ecaree.minihudextra.network;
+package com.ecaree.minihudextra.util;
 
 import dev.architectury.event.EventResult;
 import dev.architectury.platform.Platform;

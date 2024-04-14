@@ -1,6 +1,6 @@
 package com.ecaree.minihudextra;
 
-import com.ecaree.minihudextra.network.UltimineMiniHUDHandler;
+import com.ecaree.minihudextra.util.UltimineMiniHUDHandler;
 import dev.architectury.event.events.client.ClientRawInputEvent;
 import fi.dy.masa.malilib.event.InitializationHandler;
 
