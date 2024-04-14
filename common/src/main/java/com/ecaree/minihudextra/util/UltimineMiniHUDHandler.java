@@ -10,8 +10,6 @@ public class UltimineMiniHUDHandler {
     private static boolean wasEnabledInitially = false;
 
     public static void interactionEvents() {
-        if (!Platform.isModLoaded("ftbultimine")) return;
-
         if (FTBUltimineClient.keyBinding.wasPressed()) {
             if (!wasEnabledInitially) {
                 wasEnabledInitially = Configs.Generic.MAIN_RENDERING_TOGGLE.getBooleanValue();
@@ -26,6 +24,8 @@ public class UltimineMiniHUDHandler {
     }
 
     public static EventResult onKeyPress(MinecraftClient client, int keyCode, int scanCode, int action, int modifiers) {
+        if (!Platform.isModLoaded("ftbultimine")) return EventResult.pass();
+
         if (FTBUltimineClient.keyBinding.matchesKey(keyCode, scanCode) &&
                 com.ecaree.minihudextra.config.Configs.Generic.FTB_ULTIMINE_SUPPORT.getBooleanValue()) {
             interactionEvents();
