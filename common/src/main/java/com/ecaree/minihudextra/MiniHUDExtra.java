@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra;
 
 import com.ecaree.minihudextra.network.UltimineMiniHUDHandler;
+import dev.architectury.event.events.client.ClientRawInputEvent;
 import fi.dy.masa.malilib.event.InitializationHandler;
 
 public class MiniHUDExtra {
@@ -8,6 +9,6 @@ public class MiniHUDExtra {
     public static final String MOD_NAME = "MiniHUDExtra";
     public static void init() {
         InitializationHandler.getInstance().registerInitializationHandler(new InitHandler());
-        UltimineMiniHUDHandler.interactionEvents();
+        ClientRawInputEvent.KEY_PRESSED.register(UltimineMiniHUDHandler::onKeyPress);
     }
 }
