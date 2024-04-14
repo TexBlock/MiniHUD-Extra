@@ -26,7 +26,8 @@ public class UltimineMiniHUDHandler {
     }
 
     public static EventResult onKeyPress(MinecraftClient client, int keyCode, int scanCode, int action, int modifiers) {
-        if (com.ecaree.minihudextra.config.Configs.Generic.FTB_ULTIMINE_SUPPORT.getBooleanValue()) {
+        if (FTBUltimineClient.keyBinding.matchesKey(keyCode, scanCode) &&
+                com.ecaree.minihudextra.config.Configs.Generic.FTB_ULTIMINE_SUPPORT.getBooleanValue()) {
             interactionEvents();
         }
         return EventResult.pass();
