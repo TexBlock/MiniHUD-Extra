@@ -1,7 +1,6 @@
 package com.ecaree.minihudextra.util;
 
 import dev.architectury.event.EventResult;
-import dev.architectury.platform.Platform;
 import dev.ftb.mods.ftbultimine.client.FTBUltimineClient;
 import fi.dy.masa.minihud.config.Configs;
 import net.minecraft.client.MinecraftClient;
@@ -24,8 +23,6 @@ public class UltimineMiniHUDHandler {
     }
 
     public static EventResult onKeyPress(MinecraftClient client, int keyCode, int scanCode, int action, int modifiers) {
-        if (!Platform.isModLoaded("ftbultimine")) return EventResult.pass();
-
         if (FTBUltimineClient.keyBinding.matchesKey(keyCode, scanCode) &&
                 com.ecaree.minihudextra.config.Configs.Generic.FTB_ULTIMINE_SUPPORT.getBooleanValue()) {
             interactionEvents();
