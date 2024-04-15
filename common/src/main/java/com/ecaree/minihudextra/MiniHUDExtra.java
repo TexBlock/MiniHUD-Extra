@@ -2,6 +2,7 @@ package com.ecaree.minihudextra;
 
 import com.ecaree.minihudextra.util.UltimineMiniHUDHandler;
 import dev.architectury.event.events.client.ClientRawInputEvent;
+import dev.architectury.platform.Platform;
 import fi.dy.masa.malilib.event.InitializationHandler;
 
 public class MiniHUDExtra {
@@ -9,6 +10,9 @@ public class MiniHUDExtra {
     public static final String MOD_NAME = "MiniHUDExtra";
     public static void init() {
         InitializationHandler.getInstance().registerInitializationHandler(new InitHandler());
-        ClientRawInputEvent.KEY_PRESSED.register(UltimineMiniHUDHandler::onKeyPress);
+
+        if (!Platform.isModLoaded("ftbultimine")) {
+            ClientRawInputEvent.KEY_PRESSED.register(UltimineMiniHUDHandler::onKeyPress);
+        }
     }
 }
