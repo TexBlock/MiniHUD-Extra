@@ -11,7 +11,7 @@ public class MiniHUDExtra {
     public static void init() {
         InitializationHandler.getInstance().registerInitializationHandler(new InitHandler());
 
-        if (!Platform.isModLoaded("ftbultimine")) {
+        if (Platform.isModLoaded("ftbultimine")) {
             ClientRawInputEvent.KEY_PRESSED.register(UltimineMiniHUDHandler::onKeyPress);
         }
     }
