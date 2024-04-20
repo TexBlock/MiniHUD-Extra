@@ -93,10 +93,10 @@ public class Configs implements IConfigHandler {
     }
 
     public static class ModIntegration {
-        public static final ConfigBoolean RADIATION_EXPOSURE = new ConfigBoolean("infoRadiationExposure", false, "Show the Mekanism player radiation exposure\nRequires Mekanism to be loaded");
+        public static final ConfigBoolean RADIATION_EXPOSURE = new ConfigBoolean("infoRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
         public static final ConfigString RADIATION_EXPOSURE_FORMAT = new ConfigString("infoRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the radiation exposure line");
         public static final ConfigInteger RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoRadiationExposureLinePosition", 5, 0, 114514, "The line position for radiation exposure info");
-        public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the Serene Seasons info\nRequires Serene Seasons to be loaded");
+        public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded");
         public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {DAY_OF_SUB_SEASON}, \n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
         public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 6, 0, 114514, "The line position for Serene Seasons info");
         public static final ConfigBoolean BLOOD_MAGIC = new ConfigBoolean("infoBloodMagic", false, "Show the player's current LP and blood orb tier in Blood Magic\nRequires Blood Magic to be loaded");
