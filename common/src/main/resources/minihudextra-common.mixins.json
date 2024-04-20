@@ -10,6 +10,7 @@
   ],
   "mixins": [
     "bloodmagic.MixinRenderHandler",
+    "deepresonance.MixinRenderHandler",
     "mek.MixinRenderHandler",
     "sereneseasons.MixinRenderHandler"
   ],

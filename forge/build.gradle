@@ -43,6 +43,9 @@ dependencies {
     modApi 'curse.maven:serene-seasons-291874:3804257' // 1.18.2-7.0.0.15
     modApi 'curse.maven:blood-magic-224791:3953207' // 1.18.2-3.2.6-41
     modApi 'curse.maven:patchouli-306770:3846086' // 1.18.2-71.1
+    modApi 'curse.maven:mcjtylib-233105:4277564' // 1.18-6.0.20
+    modApi 'curse.maven:rftools-base-326041:4373521' // 1.18-3.0.12
+    modApi 'curse.maven:deep-resonance-233398:4379418' // 1.18-3.0.19
 }
 
 processResources {

@@ -1,7 +1,7 @@
-package com.ecaree.minihudextra.mixin.mek;
+package com.ecaree.minihudextra.mixin.deepresonance;
 
 import com.ecaree.minihudextra.config.Configs;
-import com.ecaree.minihudextra.integration.MekRadiation;
+import com.ecaree.minihudextra.integration.DeepResonanceRadiation;
 import fi.dy.masa.minihud.config.InfoToggle;
 import fi.dy.masa.minihud.event.RenderHandler;
 import net.minecraft.client.MinecraftClient;
@@ -33,16 +33,16 @@ public abstract class MixinRenderHandler {
         BlockPos pos = new BlockPos(entity.getX(), y, entity.getZ());
         boolean isChunkLoaded = world.isChunkLoaded(pos);
         if (isChunkLoaded) {
-            if (Configs.ModIntegration.MEK_RADIATION_EXPOSURE.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.MEK_RADIATION_EXPOSURE_LINE_POSITION.getIntegerValue()) { // 有无更好的实现方式？
+            if (Configs.ModIntegration.DEEP_RESONANCE_RADIATION.getBooleanValue() &&
+                    toggle.getIntegerValue() == Configs.ModIntegration.DEEP_RESONANCE_RADIATION_LINE_POSITION.getIntegerValue()) {
                 try {
                     StringBuilder str;
                     str = new StringBuilder(128);
-                    String radiationFmtStr = Configs.ModIntegration.MEK_RADIATION_EXPOSURE_FORMAT.getStringValue();
-                    str.append(String.format(radiationFmtStr, MekRadiation.getRadiationString(player)));
+                    String radiationFmtStr = Configs.ModIntegration.DEEP_RESONANCE_RADIATION_FORMAT.getStringValue();
+                    str.append(String.format(radiationFmtStr, DeepResonanceRadiation.getRadiation(player)));
                     this.addLine(str.toString());
                 } catch (Exception e) {
-                    this.addLine("Mek Radiation Exposure Format Error");
+                    this.addLine("Deep Resonance Radiation Format Error");
                 }
             }
         }
