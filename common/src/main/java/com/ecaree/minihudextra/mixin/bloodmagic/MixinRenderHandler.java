@@ -2,13 +2,13 @@ package com.ecaree.minihudextra.mixin.bloodmagic;
 
 import com.ecaree.minihudextra.config.Configs;
 import com.ecaree.minihudextra.integration.BloodMagic;
+import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
 import fi.dy.masa.minihud.event.RenderHandler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -29,10 +29,7 @@ public abstract class MixinRenderHandler {
         ClientPlayerEntity player = mc.player;
         if (entity == null || world == null || player == null) return;
 
-        double y = entity.getY();
-        BlockPos pos = new BlockPos(entity.getX(), y, entity.getZ());
-        boolean isChunkLoaded = world.isChunkLoaded(pos);
-        if (isChunkLoaded) {
+        if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
             if (Configs.ModIntegration.BLOOD_MAGIC.getBooleanValue() &&
                     toggle.getIntegerValue() == Configs.ModIntegration.BLOOD_MAGIC_LINE_POSITION.getIntegerValue()) {
                 try {
