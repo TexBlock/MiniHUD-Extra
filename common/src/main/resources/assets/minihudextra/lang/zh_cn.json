@@ -171,6 +171,12 @@
   "The format string for the Blood Magic info line\nThe supported placeholders are: {LP}, {ORB_TIER}, {ORB_TIER_STR}": "血魔法信息的格式化字符串\n支持的占位符有：{LP}, {ORB_TIER}, {ORB_TIER_STR}",
   "infoBloodMagicLinePosition": "血魔法信息显示行数",
   "The line position for Blood Magic info": "血魔法信息的显示行数",
+  "infoNaturesAura": "自然灵气信息",
+  "Show the aura around player in Natures Aura\nRequires Natures Aura to be loaded": "显示 Natures Aura 中玩家周围的灵气\n需要 Natures Aura 被加载",
+  "infoNaturesAuraFormat": "自然灵气信息格式化",
+  "The format string for the Natures Aura info line": "自然灵气信息的格式化字符串",
+  "infoNaturesAuraLinePosition": "自然灵气信息显示行数",
+  "The line position for Natures Aura info": "自然灵气信息的显示行数",
 
   "%d fps": "%d 帧",
   "%sdim: %s": "%s维度: %s",

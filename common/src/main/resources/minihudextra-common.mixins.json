@@ -12,6 +12,7 @@
     "bloodmagic.MixinRenderHandler",
     "deepresonance.MixinRenderHandler",
     "mek.MixinRenderHandler",
+    "naturesaura.MixinRenderHandler",
     "sereneseasons.MixinRenderHandler"
   ],
   "injectors": {

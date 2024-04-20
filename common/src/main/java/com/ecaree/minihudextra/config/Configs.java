@@ -105,11 +105,15 @@ public class Configs implements IConfigHandler {
         public static final ConfigBoolean BLOOD_MAGIC = new ConfigBoolean("infoBloodMagic", false, "Show the player's current LP and blood orb tier in Blood Magic\nRequires Blood Magic to be loaded");
         public static final ConfigString BLOOD_MAGIC_FORMAT = new ConfigString("infoBloodMagicFormat", "Current LP: {LP}, Blood Orb Tier: {ORB_TIER}, {ORB_TIER_STR}", "The format string for the Blood Magic info line\nThe supported placeholders are: {LP}, {ORB_TIER}, {ORB_TIER_STR}");
         public static final ConfigInteger BLOOD_MAGIC_LINE_POSITION = new ConfigInteger("infoBloodMagicLinePosition", 7, 0, 114514, "The line position for Blood Magic info");
+        public static final ConfigBoolean NATURES_AURA = new ConfigBoolean("infoNaturesAura", false, "Show the aura around player in Natures Aura\nRequires Natures Aura to be loaded");
+        public static final ConfigString NATURES_AURA_FORMAT = new ConfigString("infoNaturesAuraFormat", "Aura Around: %d", "The format string for the Natures Aura info line");
+        public static final ConfigInteger NATURES_AURA_LINE_POSITION = new ConfigInteger("infoNaturesAuraLinePosition", 8, 0, 114514, "The line position for Natures Aura info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
                 MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
                 DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION,
                 SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION,
-                BLOOD_MAGIC, BLOOD_MAGIC_FORMAT, BLOOD_MAGIC_LINE_POSITION);
+                BLOOD_MAGIC, BLOOD_MAGIC_FORMAT, BLOOD_MAGIC_LINE_POSITION,
+                NATURES_AURA, NATURES_AURA_FORMAT, NATURES_AURA_LINE_POSITION);
     }
 
     @Override
