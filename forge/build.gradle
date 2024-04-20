@@ -38,6 +38,9 @@ dependencies {
     modApi 'curse.maven:ftb-library-404465:4396792' // forge-1802.3.11-build.177
     modApi 'curse.maven:ftb-ultimine-386134:4781902' // forge-1802.3.4-build.93
     modApi 'curse.maven:mafglib-910766:5052007' // 0.1.9-mc1.18.2
+    modApi 'curse.maven:mekanism-268560:3875976' // 1.18.2-10.2.5.465
+    modApi 'curse.maven:mekanism-generators-268566:3875978' // 1.18.2-10.2.5.465
+    modApi 'curse.maven:serene-seasons-291874:3804257' // 1.18.2-7.0.0.15
 }
 
 processResources {

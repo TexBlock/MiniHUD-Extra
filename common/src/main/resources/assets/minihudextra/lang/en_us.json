@@ -2,5 +2,25 @@
   "minihudextra.gui.title.configs": "MiniHUD Extra Configs",
   "minihudextra.gui.button.config_gui.generic": "Generic",
   "minihudextra.gui.button.config_gui.colors": "Colors",
-  "minihudextra.hotkeys.category.generic_hotkeys": "Generic hotkeys"
+  "minihudextra.gui.button.config_gui.mod_integration": "Mod Integration",
+  "minihudextra.hotkeys.category.generic_hotkeys": "Generic hotkeys",
+
+  "desc.minihudextra.early_spring": "Early spring",
+  "desc.minihudextra.mid_spring": "Mid spring",
+  "desc.minihudextra.late_spring": "Late spring",
+  "desc.minihudextra.early_summer": "Early summer",
+  "desc.minihudextra.mid_summer": "Mid summer",
+  "desc.minihudextra.late_summer": "Late summer",
+  "desc.minihudextra.early_autumn": "Early autumn",
+  "desc.minihudextra.mid_autumn": "Mid autumn",
+  "desc.minihudextra.late_autumn": "Late autumn",
+  "desc.minihudextra.early_winter": "Early winter",
+  "desc.minihudextra.mid_winter": "Mid winter",
+  "desc.minihudextra.late_winter": "Late winter",
+  "desc.minihudextra.early_wet": "Early wet",
+  "desc.minihudextra.mid_wet": "Mid wet",
+  "desc.minihudextra.late_wet": "Late wet",
+  "desc.minihudextra.early_dry": "Early dry",
+  "desc.minihudextra.mid_dry": "Mid dry",
+  "desc.minihudextra.late_dry": "Late dry"
 }

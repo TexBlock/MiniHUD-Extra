@@ -92,6 +92,18 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    public static class ModIntegration {
+        public static final ConfigBoolean RADIATION_EXPOSURE = new ConfigBoolean("infoRadiationExposure", false, "Show the Mekanism player radiation exposure\nRequires Mekanism to be loaded");
+        public static final ConfigString RADIATION_EXPOSURE_FORMAT = new ConfigString("infoRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the radiation exposure line");
+        public static final ConfigInteger RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoRadiationExposureLinePosition", 5, 0, 114514, "The line position for radiation exposure info");
+        public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the Serene Seasons info\nRequires Serene Seasons to be loaded");
+        public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {SEASON_NAME}, \n{SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
+        public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 6, 0, 114514, "The line position for Serene Seasons info");
+        public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
+                RADIATION_EXPOSURE, RADIATION_EXPOSURE_FORMAT, RADIATION_EXPOSURE_LINE_POSITION,
+                SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION);
+    }
+
     @Override
     public void load() {
         File configFile = new File(FileUtils.getConfigDirectory(), CONFIG_FILE_NAME);
@@ -101,6 +113,7 @@ public class Configs implements IConfigHandler {
                 JsonObject root = element.getAsJsonObject();
                 ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+                ConfigUtils.readConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             }
         }
     }
@@ -111,6 +124,7 @@ public class Configs implements IConfigHandler {
             JsonObject root = new JsonObject();
             ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+            ConfigUtils.writeConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             JsonUtils.writeJsonToFile(root, new File(dir, CONFIG_FILE_NAME));
         }
     }
