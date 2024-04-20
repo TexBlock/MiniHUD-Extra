@@ -9,6 +9,7 @@
     "MixinRenderUtils"
   ],
   "mixins": [
+    "bloodmagic.MixinRenderHandler",
     "mek.MixinRenderHandler",
     "sereneseasons.MixinRenderHandler"
   ],

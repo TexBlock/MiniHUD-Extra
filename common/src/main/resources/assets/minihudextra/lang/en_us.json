@@ -22,5 +22,10 @@
   "desc.minihudextra.late_wet": "Late wet",
   "desc.minihudextra.early_dry": "Early dry",
   "desc.minihudextra.mid_dry": "Mid dry",
-  "desc.minihudextra.late_dry": "Late dry"
+  "desc.minihudextra.late_dry": "Late dry",
+  "desc.minihudextra.orb_tier_1": "Weak",
+  "desc.minihudextra.orb_tier_2": "Apprentice",
+  "desc.minihudextra.orb_tier_3": "Magician",
+  "desc.minihudextra.orb_tier_4": "Master",
+  "desc.minihudextra.orb_tier_5": "Archmage"
 }

@@ -41,6 +41,8 @@ dependencies {
     modApi 'curse.maven:mekanism-268560:3875976' // 1.18.2-10.2.5.465
     modApi 'curse.maven:mekanism-generators-268566:3875978' // 1.18.2-10.2.5.465
     modApi 'curse.maven:serene-seasons-291874:3804257' // 1.18.2-7.0.0.15
+    modApi 'curse.maven:blood-magic-224791:3953207' // 1.18.2-3.2.6-41
+    modApi 'curse.maven:patchouli-306770:3846086' // 1.18.2-71.1
 }
 
 processResources {
