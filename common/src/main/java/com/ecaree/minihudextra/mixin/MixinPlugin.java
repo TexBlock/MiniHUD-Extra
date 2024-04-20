@@ -13,9 +13,11 @@ public class MixinPlugin implements IMixinConfigPlugin {
     
     @Override
     public void onLoad(String mixinPackage) {
-        addMixinConfig("com.ecaree.minihudextra.mixin.mek.MixinRenderHandler", "mekanism");
-        addMixinConfig("com.ecaree.minihudextra.mixin.sereneseasons.MixinRenderHandler", "sereneseasons");
         addMixinConfig("com.ecaree.minihudextra.mixin.bloodmagic.MixinRenderHandler", "bloodmagic");
+        addMixinConfig("com.ecaree.minihudextra.mixin.deepresonance.MixinRenderHandler", "deepresonance");
+        addMixinConfig("com.ecaree.minihudextra.mixin.mek.MixinRenderHandler", "mekanism");
+        addMixinConfig("com.ecaree.minihudextra.mixin.naturesaura.MixinRenderHandler", "naturesaura");
+        addMixinConfig("com.ecaree.minihudextra.mixin.sereneseasons.MixinRenderHandler", "sereneseasons");
     }
 
     @Override
