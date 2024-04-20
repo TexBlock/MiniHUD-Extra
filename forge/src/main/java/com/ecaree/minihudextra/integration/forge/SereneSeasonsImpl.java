@@ -6,13 +6,14 @@ import sereneseasons.api.season.ISeasonState;
 import sereneseasons.api.season.SeasonHelper;
 
 public class SereneSeasonsImpl {
-    public static int getDay(World world) {
-        return SeasonHelper.getSeasonState(world).getDay();
-    }
-
     public static int getDayOfSeason(World world) {
         ISeasonState state = SeasonHelper.getSeasonState(world);
         return state.getDay() % (state.getSeasonDuration() / state.getDayDuration());
+    }
+
+    public static int getDayOfSubSeason(World world) {
+        ISeasonState state = SeasonHelper.getSeasonState(world);
+        return state.getDay() % (state.getSubSeasonDuration() / state.getDayDuration());
     }
 
     public static String getSeasonName(World world) {

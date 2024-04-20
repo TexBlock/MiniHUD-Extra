@@ -3,11 +3,11 @@ package com.ecaree.minihudextra.integration.fabric;
 import net.minecraft.world.World;
 
 public class SereneSeasonsImpl {
-    public static int getDay(World world) {
+    public static int getDayOfSeason(World world) {
         return 0;
     }
 
-    public static int getDayOfSeason(World world) {
+    public static int getDayOfSubSeason(World world) {
         return 0;
     }
 

@@ -52,6 +52,7 @@ public abstract class MixinRenderHandler {
                     str = str.replace("{SEC}",  String.format("%02d", sec));
 
                     str = str.replace("{DAY_OF_SEASON}", String.format("%d", SereneSeasons.getDayOfSeason(world)));
+                    str = str.replace("{DAY_OF_SUB_SEASON}", String.format("%d", SereneSeasons.getDayOfSubSeason(world)));
                     str = str.replace("{SEASON_NAME}", String.format("%s", SereneSeasons.getSeasonName(world)));
                     str = str.replace("{SUB_SEASON_NAME}", String.format("%s", SereneSeasons.getSubSeasonName(world)));
                     str = str.replace("{TROPICAL_SEASON_NAME}", String.format("%s", SereneSeasons.getTropicalSeasonName(world)));

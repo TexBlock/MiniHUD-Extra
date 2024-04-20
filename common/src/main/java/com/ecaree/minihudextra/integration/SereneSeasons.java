@@ -5,12 +5,12 @@ import net.minecraft.world.World;
 
 public class SereneSeasons {
     @ExpectPlatform
-    public static int getDay(World world) {
+    public static int getDayOfSeason(World world) {
         throw new AssertionError();
     }
 
     @ExpectPlatform
-    public static int getDayOfSeason(World world) {
+    public static int getDayOfSubSeason(World world) {
         throw new AssertionError();
     }
 
