@@ -39,7 +39,7 @@ public abstract class MixinRenderHandler {
                     str.append(String.format(radiationFmtStr, DeepResonanceRadiation.getRadiation(player)));
                     this.addLine(str.toString());
                 } catch (Exception e) {
-                    this.addLine("Deep Resonance Radiation Format Error");
+                    this.addLine("Deep Resonance Radiation Format Failed");
                 }
             }
         }

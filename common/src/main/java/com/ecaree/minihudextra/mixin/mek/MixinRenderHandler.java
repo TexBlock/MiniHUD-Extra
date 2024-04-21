@@ -39,7 +39,7 @@ public abstract class MixinRenderHandler {
                     str.append(String.format(radiationFmtStr, MekRadiation.getRadiationString(player)));
                     this.addLine(str.toString());
                 } catch (Exception e) {
-                    this.addLine("Mek Radiation Exposure Format Error");
+                    this.addLine("Mek Radiation Exposure Format Failed");
                 }
             }
         }

@@ -56,7 +56,7 @@ public abstract class MixinRenderHandler {
                     str = str.replace("{TROPICAL_SEASON_NAME}", String.format("%s", SereneSeasons.getTropicalSeasonName(world)));
                     this.addLine(str);
                 } catch (Exception e) {
-                    this.addLine("Serene Seasons Format Error");
+                    this.addLine("Serene Seasons Format Failed");
                 }
             }
         }

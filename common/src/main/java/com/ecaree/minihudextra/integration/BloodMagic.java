@@ -15,7 +15,7 @@ public class BloodMagic {
     }
 
     @ExpectPlatform
-    public static String getOrbTierStr(PlayerEntity player) {
+    public static String getOrbTierName(PlayerEntity player) {
         throw new AssertionError();
     }
 }
