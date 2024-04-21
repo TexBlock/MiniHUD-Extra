@@ -30,16 +30,15 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.MEK_RADIATION_EXPOSURE.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.MEK_RADIATION_EXPOSURE_LINE_POSITION.getIntegerValue()) { // 有无更好的实现方式？
+            if (Configs.ModIntegration.MEK_RADIATION.getBooleanValue() &&
+                    toggle.getIntegerValue() == Configs.ModIntegration.MEK_RADIATION_LINE_POSITION.getIntegerValue()) { // 有无更好的实现方式？
                 try {
-                    StringBuilder str;
-                    str = new StringBuilder(128);
-                    String radiationFmtStr = Configs.ModIntegration.MEK_RADIATION_EXPOSURE_FORMAT.getStringValue();
-                    str.append(String.format(radiationFmtStr, MekRadiation.getRadiationString(player)));
-                    this.addLine(str.toString());
+                    String str = Configs.ModIntegration.MEK_RADIATION_FORMAT.getStringValue();
+                    str = str.replace("{RADIATION_EXPOSURE}",  String.format("%s", MekRadiation.getRadiationString(player)));
+                    str = str.replace("{DECAY_TIME}",String.format("%s", MekRadiation.getDecayTime(player)));
+                    this.addLine(str);
                 } catch (Exception e) {
-                    this.addLine("Mek Radiation Exposure Format Failed");
+                    this.addLine("Mek Radiation Format Failed");
                 }
             }
         }

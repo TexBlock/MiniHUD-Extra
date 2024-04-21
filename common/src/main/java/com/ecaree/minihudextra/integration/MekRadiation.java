@@ -8,4 +8,9 @@ public class MekRadiation {
     public static String getRadiationString(PlayerEntity player) {
         throw new AssertionError();
     }
+
+    @ExpectPlatform
+    public static String getDecayTime(PlayerEntity player) {
+        throw new AssertionError();
+    }
 }

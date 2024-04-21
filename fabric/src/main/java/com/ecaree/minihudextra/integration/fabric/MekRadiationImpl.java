@@ -7,4 +7,8 @@ public class MekRadiationImpl {
     public static String getRadiationString(PlayerEntity player) {
         return I18n.translate("desc.minihudextra.not_available");
     }
+
+    public static String getDecayTime(PlayerEntity player) {
+        return I18n.translate("desc.minihudextra.not_available");
+    }
 }

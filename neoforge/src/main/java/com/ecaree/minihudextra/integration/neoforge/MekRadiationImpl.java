@@ -1,8 +1,12 @@
 package com.ecaree.minihudextra.integration.neoforge;
 
+import mekanism.common.config.MekanismConfig;
 import mekanism.common.lib.radiation.RadiationManager;
 import mekanism.common.util.UnitDisplayUtils;
+import mekanism.common.util.text.TextUtils;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Formatting;
 
 @SuppressWarnings("unused") // 好像是插件还不支持。
 public class MekRadiationImpl {
@@ -10,8 +14,21 @@ public class MekRadiationImpl {
         RadiationManager.LevelAndMaxMagnitude levelAndMaxMagnitude = RadiationManager.get().getRadiationLevelAndMaxMagnitude(player);
         double magnitude = levelAndMaxMagnitude.level();
         String colorCode = RadiationManager.RadiationScale.getSeverityColor(magnitude).code;
-        return colorCode + UnitDisplayUtils.getDisplayShort(magnitude, UnitDisplayUtils.RadiationUnit.SVH, 3).getString();
-        // TODO
-//        TextUtils.getHoursMinutes(RadiationManager.get().getDecayTime(levelAndMaxMagnitude.maxMagnitude(), true))
+        return colorCode
+                + UnitDisplayUtils.getDisplayShort(magnitude, UnitDisplayUtils.RadiationUnit.SVH, 3).getString()
+                + Formatting.RESET;
+    }
+
+    public static String getDecayTime(PlayerEntity player) {
+        RadiationManager.LevelAndMaxMagnitude levelAndMaxMagnitude = RadiationManager.get().getRadiationLevelAndMaxMagnitude(player);
+        double magnitude = levelAndMaxMagnitude.level();
+        String colorCode = RadiationManager.RadiationScale.getSeverityColor(magnitude).code;
+        if (MekanismConfig.common.enableDecayTimers.get() && magnitude > 1.0E-7) {
+            return colorCode
+                    + TextUtils.getHoursMinutes(RadiationManager.get().getDecayTime(levelAndMaxMagnitude.maxMagnitude(), true)).getString()
+                    + Formatting.RESET;
+        } else {
+            return I18n.translate("desc.minihudextra.not_available");
+        }
     }
 }

@@ -102,9 +102,9 @@ public class Configs implements IConfigHandler {
     }
 
     public static class ModIntegration {
-        public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
-        public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
-        public static final ConfigInteger MEK_RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoMekRadiationExposureLinePosition", 7, 0, 100, "The line position for Mek radiation exposure info");
+        public static final ConfigBoolean MEK_RADIATION = new ConfigBoolean("infoMekRadiation", false, "Show the player's radiation info in Mekanism\nRequires Mekanism to be loaded");
+        public static final ConfigString MEK_RADIATION_FORMAT = new ConfigString("infoMekRadiationFormat", "Radiation Exposure: {RADIATION_EXPOSURE}, Decay Time: {DECAY_TIME}", "The format string for the Mek radiation line\nThe supported placeholders are:\n{RADIATION_EXPOSURE}, {DECAY_TIME}");
+        public static final ConfigInteger MEK_RADIATION_LINE_POSITION = new ConfigInteger("infoMekRadiationLinePosition", 7, 0, 100, "The line position for Mek radiation info");
         public static final ConfigBoolean DEEP_RESONANCE_RADIATION = new ConfigBoolean("infoDeepResonanceRadiation", false, "Show the radiation around player in Deep Resonance\nRequires Deep Resonance to be loaded");
         public static final ConfigString DEEP_RESONANCE_RADIATION_FORMAT = new ConfigString("infoDeepResonanceRadiationFormat", "Deep Resonance Radiation: %.2f", "The format string for the Deep Resonance radiation line");
         public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 8, 0, 100, "The line position for Deep Resonance radiation info");
@@ -118,7 +118,7 @@ public class Configs implements IConfigHandler {
         public static final ConfigString NATURES_AURA_FORMAT = new ConfigString("infoNaturesAuraFormat", "Aura Around: %d", "The format string for the Natures Aura info line");
         public static final ConfigInteger NATURES_AURA_LINE_POSITION = new ConfigInteger("infoNaturesAuraLinePosition", 11, 0, 100, "The line position for Natures Aura info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
-                MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
+                MEK_RADIATION, MEK_RADIATION_FORMAT, MEK_RADIATION_LINE_POSITION,
                 DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION,
                 SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION,
                 BLOOD_MAGIC, BLOOD_MAGIC_FORMAT, BLOOD_MAGIC_LINE_POSITION,
