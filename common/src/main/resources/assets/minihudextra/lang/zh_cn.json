@@ -2,6 +2,7 @@
   "minihudextra.gui.title.configs": "MiniHUD Extra 配置",
   "minihudextra.gui.button.config_gui.generic": "通用",
   "minihudextra.gui.button.config_gui.colors": "颜色",
+  "minihudextra.gui.button.config_gui.vanilla": "原版",
   "minihudextra.gui.button.config_gui.mod_integration": "模组联动",
   "minihudextra.hotkeys.category.generic_hotkeys": "通用快捷键",
 
@@ -28,6 +29,15 @@
   "desc.minihudextra.orb_tier_3": "法师",
   "desc.minihudextra.orb_tier_4": "导师",
   "desc.minihudextra.orb_tier_5": "贤者",
+  "desc.minihudextra.moon_phase_1": "满月",
+  "desc.minihudextra.moon_phase_2": "亏凸月",
+  "desc.minihudextra.moon_phase_3": "下弦月",
+  "desc.minihudextra.moon_phase_4": "残月",
+  "desc.minihudextra.moon_phase_5": "新月",
+  "desc.minihudextra.moon_phase_6": "蛾眉月",
+  "desc.minihudextra.moon_phase_7": "上弦月",
+  "desc.minihudextra.moon_phase_8": "盈凸月",
+
 
   "openConfigGui": "打开配置界面",
   "A hotkey to open the in-game Config GUI": "打开游戏内配置界面的快捷键",
@@ -146,6 +156,13 @@
   "Color for line 48": "第四十八行的颜色",
   "Color for line 49": "第四十九行的颜色",
   "Color for line 50": "第五十行的颜色",
+
+  "infoMoonPhase": "月相信息",
+  "Show the moon phase": "显示月相",
+  "infoMoonPhaseFormat": "月相信息格式化",
+  "The format string for the moon phase line\nThe supported placeholders are: {MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} starts the moon phase counter from 1, {MOON_PHASE} starts from 0": "月相信息的格式化字符串\n支持的占位符有：{MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} 从 1 开始计数，{MOON_PHASE} 从 0 开始计数",
+  "infoMoonPhaseLinePosition": "月相信息显示行数",
+  "The line position for moon phase info": "月相信息的显示行数",
 
   "infoMekRadiationExposure": "Mek 辐射暴露信息",
   "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded": "显示 Mekanism 中玩家的辐射暴露\n需要 Mekanism 被加载",

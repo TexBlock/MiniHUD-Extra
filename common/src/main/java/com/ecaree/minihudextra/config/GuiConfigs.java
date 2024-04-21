@@ -61,6 +61,8 @@ public class GuiConfigs extends GuiConfigsBase {
             return ConfigOptionWrapper.createFor(Configs.Colors.OPTIONS);
         } else if (tab == ConfigGuiTab.MOD_INTEGRATION) {
             return ConfigOptionWrapper.createFor(Configs.ModIntegration.OPTIONS);
+        } else if (tab == ConfigGuiTab.VANILLA) {
+            return ConfigOptionWrapper.createFor(Configs.Vanilla.OPTIONS);
         }
         return Collections.emptyList();
     }
@@ -86,6 +88,7 @@ public class GuiConfigs extends GuiConfigsBase {
     public enum ConfigGuiTab {
         GENERIC("minihudextra.gui.button.config_gui.generic"),
         COLORS("minihudextra.gui.button.config_gui.colors"),
+        VANILLA("minihudextra.gui.button.config_gui.vanilla"),
         MOD_INTEGRATION("minihudextra.gui.button.config_gui.mod_integration");
         private final String translationKey;
         ConfigGuiTab(String translationKey) {

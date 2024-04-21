@@ -6,7 +6,8 @@
   "plugin": "com.ecaree.minihudextra.mixin.MixinPlugin",
   "client": [
     "MixinRenderHandler",
-    "MixinRenderUtils"
+    "MixinRenderUtils",
+    "vanilla.MixinRenderHandler"
   ],
   "mixins": [
     "bloodmagic.MixinRenderHandler",

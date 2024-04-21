@@ -92,6 +92,15 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    public static class Vanilla {
+        public static final ConfigBoolean MOON_PHASE = new ConfigBoolean("infoMoonPhase", false, "Show the moon phase");
+        public static final ConfigString MOON_PHASE_FORMAT = new ConfigString("infoMoonPhaseFormat", "Moon Phase: {MOON_PHASE}, {MOON_PHASE_STR}", "The format string for the moon phase line\nThe supported placeholders are: {MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} starts the moon phase counter from 1, {MOON_PHASE} starts from 0");
+        public static final ConfigInteger MOON_PHASE_LINE_POSITION = new ConfigInteger("infoMoonPhaseLinePosition", 4, 0, 114514, "The line position for moon phase info");
+        public static List<IConfigBase> OPTIONS = ImmutableList.of(
+                MOON_PHASE, MOON_PHASE_FORMAT, MOON_PHASE_LINE_POSITION
+        );
+    }
+
     public static class ModIntegration {
         public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
         public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
@@ -125,6 +134,7 @@ public class Configs implements IConfigHandler {
                 JsonObject root = element.getAsJsonObject();
                 ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+                ConfigUtils.readConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
                 ConfigUtils.readConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             }
         }
@@ -136,6 +146,7 @@ public class Configs implements IConfigHandler {
             JsonObject root = new JsonObject();
             ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+            ConfigUtils.writeConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
             ConfigUtils.writeConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             JsonUtils.writeJsonToFile(root, new File(dir, CONFIG_FILE_NAME));
         }
