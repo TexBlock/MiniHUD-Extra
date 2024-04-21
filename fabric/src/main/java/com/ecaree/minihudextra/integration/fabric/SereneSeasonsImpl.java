@@ -1,5 +1,6 @@
 package com.ecaree.minihudextra.integration.fabric;
 
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.world.World;
 
 public class SereneSeasonsImpl {
@@ -12,14 +13,14 @@ public class SereneSeasonsImpl {
     }
 
     public static String getSeasonName(World world) {
-        return "Not available";
+        return I18n.translate("desc.minihudextra.not_available");
     }
 
     public static String getSubSeasonName(World world) {
-        return "Not available";
+        return I18n.translate("desc.minihudextra.not_available");
     }
 
     public static String getTropicalSeasonName(World world) {
-        return "Not available";
+        return I18n.translate("desc.minihudextra.not_available");
     }
 }
