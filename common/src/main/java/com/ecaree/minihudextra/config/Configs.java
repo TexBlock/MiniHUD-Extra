@@ -99,9 +99,13 @@ public class Configs implements IConfigHandler {
         public static final ConfigBoolean DEEP_RESONANCE_RADIATION = new ConfigBoolean("infoDeepResonanceRadiation", false, "Show the radiation around player in Deep Resonance\nRequires Deep Resonance to be loaded");
         public static final ConfigString DEEP_RESONANCE_RADIATION_FORMAT = new ConfigString("infoDeepResonanceRadiationFormat", "Deep Resonance Radiation: %.2f", "The format string for the Deep Resonance radiation line");
         public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 8, 0, 100, "The line position for Deep Resonance radiation info");
+        public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded");
+        public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {DAY_OF_SUB_SEASON}, \n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
+        public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 9, 0, 100, "The line position for Serene Seasons info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
                 MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
-                DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION);
+                DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION,
+                SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION);
     }
 
     @Override
