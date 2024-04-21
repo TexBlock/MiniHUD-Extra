@@ -3,6 +3,7 @@ package com.ecaree.minihudextra.mixin.bloodmagic;
 import com.ecaree.minihudextra.config.Configs;
 import com.ecaree.minihudextra.integration.BloodMagic;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
+import dev.architectury.platform.Platform;
 import fi.dy.masa.minihud.config.InfoToggle;
 import fi.dy.masa.minihud.event.RenderHandler;
 import net.minecraft.client.MinecraftClient;
@@ -40,11 +41,10 @@ public abstract class MixinRenderHandler {
                     str = str.replace("{ORB_TIER_NAME}", String.format("%s", BloodMagic.getOrbTierName(player)));
                     this.addLine(str);
                 } catch (Exception e) {
-                    if (world.isClient) {
-                        this.addLine("Blood Magic Format Failed, MHEx is may not loaded on the server!"); // 经测试，灵魂网络应该是一个服务端事件。
-                    } else {
-                        this.addLine("Blood Magic Format Failed");
+                    if (world.isClient && Platform.isDevelopmentEnvironment()) {
+                        this.addLine("Blood Magic Format Failed, MHEx is may not loaded on the server!");
                     }
+                    this.addLine("Blood Magic Format Failed");
                 }
             }
         }
