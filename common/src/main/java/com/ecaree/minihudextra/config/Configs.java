@@ -135,8 +135,8 @@ public class Configs implements IConfigHandler {
             JsonElement element = JsonUtils.parseJsonFile(configFile);
             if (element != null && element.isJsonObject()) {
                 JsonObject root = element.getAsJsonObject();
-                ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+                ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
                 ConfigUtils.readConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             }
@@ -147,8 +147,8 @@ public class Configs implements IConfigHandler {
         File dir = FileUtils.getConfigDirectory();
         if (dir.exists() && dir.isDirectory() || dir.mkdirs()) {
             JsonObject root = new JsonObject();
-            ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Generic", Configs.Generic.OPTIONS);
+            ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
             ConfigUtils.writeConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             JsonUtils.writeJsonToFile(root, new File(dir, CONFIG_FILE_NAME));
