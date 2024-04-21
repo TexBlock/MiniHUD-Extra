@@ -3,10 +3,17 @@
   "package": "com.ecaree.minihudextra.mixin",
   "compatibilityLevel": "JAVA_17",
   "minVersion": "0.8",
+  "plugin": "com.ecaree.minihudextra.mixin.MixinPlugin",
   "client": [
-    "MixinRenderUtils"
+    "MixinRenderUtils",
+    "vanilla.MixinRenderHandler"
   ],
   "mixins": [
+    "bloodmagic.MixinRenderHandler",
+    "deepresonance.MixinRenderHandler",
+    "mek.MixinRenderHandler",
+    "naturesaura.MixinRenderHandler",
+    "sereneseasons.MixinRenderHandler"
   ],
   "injectors": {
     "defaultRequire": 1
