@@ -59,10 +59,10 @@ public class GuiConfigs extends GuiConfigsBase {
             return ConfigOptionWrapper.createFor(Configs.Generic.OPTIONS);
         } else if (tab == ConfigGuiTab.COLORS) {
             return ConfigOptionWrapper.createFor(Configs.Colors.OPTIONS);
-        } else if (tab == ConfigGuiTab.MOD_INTEGRATION) {
-            return ConfigOptionWrapper.createFor(Configs.ModIntegration.OPTIONS);
         } else if (tab == ConfigGuiTab.VANILLA) {
             return ConfigOptionWrapper.createFor(Configs.Vanilla.OPTIONS);
+        } else if (tab == ConfigGuiTab.MOD_INTEGRATION) {
+            return ConfigOptionWrapper.createFor(Configs.ModIntegration.OPTIONS);
         }
         return Collections.emptyList();
     }
