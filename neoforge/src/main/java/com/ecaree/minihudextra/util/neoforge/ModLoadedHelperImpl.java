@@ -1,6 +1,5 @@
 package com.ecaree.minihudextra.util.neoforge;
 
-
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 
