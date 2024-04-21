@@ -92,6 +92,14 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    public static class ModIntegration {
+        public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
+        public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
+        public static final ConfigInteger MEK_RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoMekRadiationExposureLinePosition", 7, 0, 100, "The line position for Mek radiation exposure info");
+        public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
+                MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION);
+    }
+
     @Override
     public void load() {
         File configFile = new File(FileUtils.getConfigDirectory(), CONFIG_FILE_NAME);
@@ -101,6 +109,7 @@ public class Configs implements IConfigHandler {
                 JsonObject root = element.getAsJsonObject();
                 ConfigUtils.readConfigBase(root, "Generic", Configs.Generic.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
+                ConfigUtils.readConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             }
         }
     }
@@ -111,6 +120,7 @@ public class Configs implements IConfigHandler {
             JsonObject root = new JsonObject();
             ConfigUtils.writeConfigBase(root, "Generic", Configs.Generic.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
+            ConfigUtils.writeConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             JsonUtils.writeJsonToFile(root, new File(dir, CONFIG_FILE_NAME));
         }
     }
