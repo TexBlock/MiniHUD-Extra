@@ -47,7 +47,28 @@ public abstract class MixinRenderHandler {
                 }
             }
 
+            if (Configs.Vanilla.WEATHER.getBooleanValue() &&
+                    toggle.getIntegerValue() == Configs.Vanilla.WEATHER_LINE_POSITION.getIntegerValue()) {
+                try {
+                    String str = Configs.Vanilla.WEATHER_FORMAT.getStringValue();
 
+                    boolean isRaining = world.isRaining();
+                    boolean isThundering = world.isThundering();
+                    String weather = isRaining
+                            ? isThundering ? I18n.translate("desc.minihudextra.weather_t") : I18n.translate("desc.minihudextra.weather_r")
+                            : I18n.translate("desc.minihudextra.weather_c");
+                    String weatherCompact = isRaining
+                            ? isThundering ? "T" : "R"
+                            : "C";
+                    str = str.replace("{IS_RAINING}", String.format("%b", isRaining));
+                    str = str.replace("{IS_THUNDERING}", String.format("%b", isThundering));
+                    str = str.replace("{WEATHER}", String.format("%s", weather));
+                    str = str.replace("{WEATHER_COMPACT}", String.format("%s", weatherCompact));
+                    this.addLine(str);
+                } catch (Exception e) {
+                    this.addLine("Weather Format Error");
+                }
+            }
         }
     }
 }

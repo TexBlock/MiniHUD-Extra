@@ -81,7 +81,6 @@ public class Configs implements IConfigHandler {
         public static final ConfigColor LINE_FORTYEIGHT = new ConfigColor("lineFortyEight", "#FFE0E0E0", "Color for line 48");
         public static final ConfigColor LINE_FORTYNINE = new ConfigColor("lineFortyNine", "#FFE0E0E0", "Color for line 49");
         public static final ConfigColor LINE_FIFTY = new ConfigColor("lineFifty", "#FFE0E0E0", "Color for line 50");
-
         public static List<IConfigBase> OPTIONS = ImmutableList.of(
                 OUTLINE_COLOR,
                 LINE_ONE, LINE_TWO, LINE_THREE, LINE_FOUR, LINE_FIVE, LINE_SIX, LINE_SEVEN, LINE_EIGHT, LINE_NINE, LINE_TEN,
@@ -96,8 +95,12 @@ public class Configs implements IConfigHandler {
         public static final ConfigBoolean MOON_PHASE = new ConfigBoolean("infoMoonPhase", false, "Show the moon phase");
         public static final ConfigString MOON_PHASE_FORMAT = new ConfigString("infoMoonPhaseFormat", "Moon Phase: {MOON_PHASE}, {MOON_PHASE_STR}", "The format string for the moon phase line\nThe supported placeholders are: {MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} starts the moon phase counter from 1, {MOON_PHASE} starts from 0");
         public static final ConfigInteger MOON_PHASE_LINE_POSITION = new ConfigInteger("infoMoonPhaseLinePosition", 4, 0, 114514, "The line position for moon phase info");
+        public static final ConfigBoolean WEATHER = new ConfigBoolean("infoWeather", false, "Show the weather");
+        public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are: {IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}");
+        public static final ConfigInteger WEATHER_LINE_POSITION = new ConfigInteger("infoWeatherLinePosition", 3, 0, 114514, "The line position for weather info");
         public static List<IConfigBase> OPTIONS = ImmutableList.of(
-                MOON_PHASE, MOON_PHASE_FORMAT, MOON_PHASE_LINE_POSITION
+                MOON_PHASE, MOON_PHASE_FORMAT, MOON_PHASE_LINE_POSITION,
+                WEATHER, WEATHER_FORMAT, WEATHER_LINE_POSITION
         );
     }
 

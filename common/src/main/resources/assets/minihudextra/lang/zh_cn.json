@@ -37,6 +37,9 @@
   "desc.minihudextra.moon_phase_6": "蛾眉月",
   "desc.minihudextra.moon_phase_7": "上弦月",
   "desc.minihudextra.moon_phase_8": "盈凸月",
+  "desc.minihudextra.weather_t": "雷雨",
+  "desc.minihudextra.weather_r": "雨天",
+  "desc.minihudextra.weather_c": "晴天",
 
 
   "openConfigGui": "打开配置界面",
@@ -163,6 +166,12 @@
   "The format string for the moon phase line\nThe supported placeholders are: {MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} starts the moon phase counter from 1, {MOON_PHASE} starts from 0": "月相信息的格式化字符串\n支持的占位符有：{MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} 从 1 开始计数，{MOON_PHASE} 从 0 开始计数",
   "infoMoonPhaseLinePosition": "月相信息显示行数",
   "The line position for moon phase info": "月相信息的显示行数",
+  "infoWeather": "天气信息",
+  "Show the weather": "显示天气",
+  "infoWeatherFormat": "天气信息格式化",
+  "The format string for the weather line\nThe supported placeholders are: {IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}": "天气信息的格式化字符串\n支持的占位符有：{IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}",
+  "infoWeatherLinePosition": "天气信息显示行数",
+  "The line position for weather info": "天气信息的显示行数",
 
   "infoMekRadiationExposure": "Mek 辐射暴露信息",
   "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded": "显示 Mekanism 中玩家的辐射暴露\n需要 Mekanism 被加载",

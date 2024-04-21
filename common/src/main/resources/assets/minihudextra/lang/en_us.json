@@ -36,5 +36,8 @@
   "desc.minihudextra.moon_phase_5": "New moon",
   "desc.minihudextra.moon_phase_6": "Waxing crescent",
   "desc.minihudextra.moon_phase_7": "First quarter",
-  "desc.minihudextra.moon_phase_8": "Waxing gibbous"
+  "desc.minihudextra.moon_phase_8": "Waxing gibbous",
+  "desc.minihudextra.weather_t": "Thunder",
+  "desc.minihudextra.weather_r": "Rain",
+  "desc.minihudextra.weather_c": "Clear"
 }
