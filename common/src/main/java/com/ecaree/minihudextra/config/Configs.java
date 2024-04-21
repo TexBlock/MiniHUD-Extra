@@ -94,10 +94,10 @@ public class Configs implements IConfigHandler {
     public static class Vanilla {
         public static final ConfigBoolean MOON_PHASE = new ConfigBoolean("infoMoonPhase", false, "Show the moon phase");
         public static final ConfigString MOON_PHASE_FORMAT = new ConfigString("infoMoonPhaseFormat", "Moon Phase: {MOON_PHASE}, {MOON_PHASE_STR}", "The format string for the moon phase line\nThe supported placeholders are: {MOON_PHASE_1}, {MOON_PHASE}, {MOON_PHASE_STR}\n{MOON_PHASE_1} starts the moon phase counter from 1, {MOON_PHASE} starts from 0");
-        public static final ConfigInteger MOON_PHASE_LINE_POSITION = new ConfigInteger("infoMoonPhaseLinePosition", 51, 0, 114514, "The line position for moon phase info");
+        public static final ConfigInteger MOON_PHASE_LINE_POSITION = new ConfigInteger("infoMoonPhaseLinePosition", 51, 0, 100, "The line position for moon phase info");
         public static final ConfigBoolean WEATHER = new ConfigBoolean("infoWeather", false, "Show the weather");
         public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are: {IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}");
-        public static final ConfigInteger WEATHER_LINE_POSITION = new ConfigInteger("infoWeatherLinePosition", 52, 0, 114514, "The line position for weather info");
+        public static final ConfigInteger WEATHER_LINE_POSITION = new ConfigInteger("infoWeatherLinePosition", 52, 0, 100, "The line position for weather info");
         public static List<IConfigBase> OPTIONS = ImmutableList.of(
                 MOON_PHASE, MOON_PHASE_FORMAT, MOON_PHASE_LINE_POSITION,
                 WEATHER, WEATHER_FORMAT, WEATHER_LINE_POSITION
@@ -107,19 +107,19 @@ public class Configs implements IConfigHandler {
     public static class ModIntegration {
         public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
         public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
-        public static final ConfigInteger MEK_RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoMekRadiationExposureLinePosition", 53, 0, 114514, "The line position for Mek radiation exposure info");
+        public static final ConfigInteger MEK_RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoMekRadiationExposureLinePosition", 53, 0, 100, "The line position for Mek radiation exposure info");
         public static final ConfigBoolean DEEP_RESONANCE_RADIATION = new ConfigBoolean("infoDeepResonanceRadiation", false, "Show the radiation around player in Deep Resonance\nRequires Deep Resonance to be loaded");
         public static final ConfigString DEEP_RESONANCE_RADIATION_FORMAT = new ConfigString("infoDeepResonanceRadiationFormat", "Deep Resonance Radiation: %.2f", "The format string for the Deep Resonance radiation line");
-        public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 54, 0, 114514, "The line position for Deep Resonance radiation info");
+        public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 54, 0, 100, "The line position for Deep Resonance radiation info");
         public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded");
         public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {DAY_OF_SUB_SEASON}, \n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
-        public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 55, 0, 114514, "The line position for Serene Seasons info");
+        public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 55, 0, 100, "The line position for Serene Seasons info");
         public static final ConfigBoolean BLOOD_MAGIC = new ConfigBoolean("infoBloodMagic", false, "Show the player's current LP and blood orb tier in Blood Magic\nRequires Blood Magic to be loaded");
         public static final ConfigString BLOOD_MAGIC_FORMAT = new ConfigString("infoBloodMagicFormat", "Current LP: {LP}, Blood Orb Tier: {ORB_TIER}, {ORB_TIER_STR}", "The format string for the Blood Magic info line\nThe supported placeholders are: {LP}, {ORB_TIER}, {ORB_TIER_STR}");
-        public static final ConfigInteger BLOOD_MAGIC_LINE_POSITION = new ConfigInteger("infoBloodMagicLinePosition", 56, 0, 114514, "The line position for Blood Magic info");
+        public static final ConfigInteger BLOOD_MAGIC_LINE_POSITION = new ConfigInteger("infoBloodMagicLinePosition", 56, 0, 100, "The line position for Blood Magic info");
         public static final ConfigBoolean NATURES_AURA = new ConfigBoolean("infoNaturesAura", false, "Show the aura around player in Natures Aura\nRequires Natures Aura to be loaded");
         public static final ConfigString NATURES_AURA_FORMAT = new ConfigString("infoNaturesAuraFormat", "Aura Around: %d", "The format string for the Natures Aura info line");
-        public static final ConfigInteger NATURES_AURA_LINE_POSITION = new ConfigInteger("infoNaturesAuraLinePosition", 57, 0, 114514, "The line position for Natures Aura info");
+        public static final ConfigInteger NATURES_AURA_LINE_POSITION = new ConfigInteger("infoNaturesAuraLinePosition", 57, 0, 100, "The line position for Natures Aura info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
                 MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
                 DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION,
