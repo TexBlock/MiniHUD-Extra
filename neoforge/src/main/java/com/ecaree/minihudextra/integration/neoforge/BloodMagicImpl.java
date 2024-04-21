@@ -12,7 +12,7 @@ public class BloodMagicImpl {
         return 0;
     }
 
-    public static String getOrbTierStr(PlayerEntity player) {
+    public static String getOrbTierName(PlayerEntity player) {
         return "Not available";
     }
 }

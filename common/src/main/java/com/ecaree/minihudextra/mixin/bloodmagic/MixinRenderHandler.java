@@ -37,10 +37,10 @@ public abstract class MixinRenderHandler {
 
                     str = str.replace("{LP}", String.format("%d", BloodMagic.getLP(player)));
                     str = str.replace("{ORB_TIER}", String.format("%d", BloodMagic.getOrbTier(player)));
-                    str = str.replace("{ORB_TIER_STR}", String.format("%s", BloodMagic.getOrbTierStr(player)));
+                    str = str.replace("{ORB_TIER_STR}", String.format("%s", BloodMagic.getOrbTierName(player)));
                     this.addLine(str);
                 } catch (Exception e) {
-                    this.addLine("Blood Magic Format Error");
+                    this.addLine("Blood Magic Format Failed");
                 }
             }
         }

@@ -16,7 +16,7 @@ public class BloodMagicImpl {
         return soulNet.getOrbTier();
     }
 
-    public static String getOrbTierStr(PlayerEntity player) {
+    public static String getOrbTierName(PlayerEntity player) {
         return I18n.translate("desc.minihudextra.orb_tier_" + getOrbTier(player));
     }
 }

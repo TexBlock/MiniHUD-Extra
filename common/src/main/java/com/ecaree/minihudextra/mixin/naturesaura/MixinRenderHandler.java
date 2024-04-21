@@ -39,7 +39,7 @@ public abstract class MixinRenderHandler {
                     str.append(String.format(auraFmtStr, NaturesAura.getAura(world, player.getBlockPos())));
                     this.addLine(str.toString());
                 } catch (Exception e) {
-                    this.addLine("Natures Aura Format Error");
+                    this.addLine("Natures Aura Format Failed");
                 }
             }
         }

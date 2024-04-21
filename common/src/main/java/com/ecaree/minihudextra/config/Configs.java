@@ -94,7 +94,7 @@ public class Configs implements IConfigHandler {
 
     public static class Vanilla {
         public static final ConfigBoolean WEATHER = new ConfigBoolean("infoWeather", false, "Show the weather");
-        public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are: {IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}");
+        public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are:\n{IS_RAINING}, {IS_THUNDERING}, {WEATHER}(weather name),\n{WEATHER_ABBR}(abbr of weather name)");
         public static final ConfigInteger WEATHER_LINE_POSITION = new ConfigInteger("infoWeatherLinePosition", 6, 0, 100, "The line position for weather info");
         public static List<IConfigBase> OPTIONS = ImmutableList.of(
                 WEATHER, WEATHER_FORMAT, WEATHER_LINE_POSITION
@@ -109,10 +109,10 @@ public class Configs implements IConfigHandler {
         public static final ConfigString DEEP_RESONANCE_RADIATION_FORMAT = new ConfigString("infoDeepResonanceRadiationFormat", "Deep Resonance Radiation: %.2f", "The format string for the Deep Resonance radiation line");
         public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 8, 0, 100, "The line position for Deep Resonance radiation info");
         public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded");
-        public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {DAY_OF_SUB_SEASON}, \n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
+        public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are:\n{DAY_OF_SEASON}, {DAY_OF_SUB_SEASON},\n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\n§eand placeholders in MiniHUD dateFormatMinecraft");
         public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 9, 0, 100, "The line position for Serene Seasons info");
         public static final ConfigBoolean BLOOD_MAGIC = new ConfigBoolean("infoBloodMagic", false, "Show the player's current LP and blood orb tier in Blood Magic\nRequires Blood Magic to be loaded");
-        public static final ConfigString BLOOD_MAGIC_FORMAT = new ConfigString("infoBloodMagicFormat", "Current LP: {LP}, Blood Orb Tier: {ORB_TIER}, {ORB_TIER_STR}", "The format string for the Blood Magic info line\nThe supported placeholders are: {LP}, {ORB_TIER}, {ORB_TIER_STR}");
+        public static final ConfigString BLOOD_MAGIC_FORMAT = new ConfigString("infoBloodMagicFormat", "Current LP: {LP}, Blood Orb Tier: {ORB_TIER}, {ORB_TIER_NAME}", "The format string for the Blood Magic info line\nThe supported placeholders are:\n{LP}, {ORB_TIER}(tier in number), {ORB_TIER_NAME}");
         public static final ConfigInteger BLOOD_MAGIC_LINE_POSITION = new ConfigInteger("infoBloodMagicLinePosition", 10, 0, 100, "The line position for Blood Magic info");
         public static final ConfigBoolean NATURES_AURA = new ConfigBoolean("infoNaturesAura", false, "Show the aura around player in Natures Aura\nRequires Natures Aura to be loaded");
         public static final ConfigString NATURES_AURA_FORMAT = new ConfigString("infoNaturesAuraFormat", "Aura Around: %d", "The format string for the Natures Aura info line");

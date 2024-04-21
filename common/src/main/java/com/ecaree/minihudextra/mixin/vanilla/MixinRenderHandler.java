@@ -40,16 +40,16 @@ public abstract class MixinRenderHandler {
                     String weather = isRaining
                             ? isThundering ? I18n.translate("desc.minihudextra.weather_t") : I18n.translate("desc.minihudextra.weather_r")
                             : I18n.translate("desc.minihudextra.weather_c");
-                    String weatherCompact = isRaining
+                    String weatherAbbr = isRaining
                             ? isThundering ? "T" : "R"
                             : "C";
                     str = str.replace("{IS_RAINING}", String.format("%b", isRaining));
                     str = str.replace("{IS_THUNDERING}", String.format("%b", isThundering));
                     str = str.replace("{WEATHER}", String.format("%s", weather));
-                    str = str.replace("{WEATHER_COMPACT}", String.format("%s", weatherCompact));
+                    str = str.replace("{WEATHER_ABBR}", String.format("%s", weatherAbbr));
                     this.addLine(str);
                 } catch (Exception e) {
-                    this.addLine("Weather Format Error");
+                    this.addLine("Weather Format Failed");
                 }
             }
         }
