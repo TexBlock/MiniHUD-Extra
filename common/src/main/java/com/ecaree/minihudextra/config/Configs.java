@@ -102,10 +102,14 @@ public class Configs implements IConfigHandler {
         public static final ConfigBoolean SERENE_SEASONS = new ConfigBoolean("infoSereneSeasons", false, "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded");
         public static final ConfigString SERENE_SEASONS_FORMAT = new ConfigString("infoSereneSeasonsFormat", "{SUB_SEASON_NAME}, Day {DAY_OF_SUB_SEASON}, {HOUR}:{MIN}:{SEC}", "The format string for the Serene Seasons info line\nThe supported placeholders are: {DAY_OF_SEASON}, {DAY_OF_SUB_SEASON}, \n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\nand placeholders in MiniHUD dateFormatMinecraft");
         public static final ConfigInteger SERENE_SEASONS_LINE_POSITION = new ConfigInteger("infoSereneSeasonsLinePosition", 9, 0, 100, "The line position for Serene Seasons info");
+        public static final ConfigBoolean BLOOD_MAGIC = new ConfigBoolean("infoBloodMagic", false, "Show the player's current LP and blood orb tier in Blood Magic\nRequires Blood Magic to be loaded");
+        public static final ConfigString BLOOD_MAGIC_FORMAT = new ConfigString("infoBloodMagicFormat", "Current LP: {LP}, Blood Orb Tier: {ORB_TIER}, {ORB_TIER_STR}", "The format string for the Blood Magic info line\nThe supported placeholders are: {LP}, {ORB_TIER}, {ORB_TIER_STR}");
+        public static final ConfigInteger BLOOD_MAGIC_LINE_POSITION = new ConfigInteger("infoBloodMagicLinePosition", 10, 0, 100, "The line position for Blood Magic info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
                 MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
                 DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION,
-                SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION);
+                SERENE_SEASONS, SERENE_SEASONS_FORMAT, SERENE_SEASONS_LINE_POSITION,
+                BLOOD_MAGIC, BLOOD_MAGIC_FORMAT, BLOOD_MAGIC_LINE_POSITION);
     }
 
     @Override
