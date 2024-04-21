@@ -92,6 +92,15 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    public static class Vanilla {
+        public static final ConfigBoolean WEATHER = new ConfigBoolean("infoWeather", false, "Show the weather");
+        public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are: {IS_RAINING}, {IS_THUNDERING}\n{WEATHER}, {WEATHER_COMPACT}");
+        public static final ConfigInteger WEATHER_LINE_POSITION = new ConfigInteger("infoWeatherLinePosition", 6, 0, 100, "The line position for weather info");
+        public static List<IConfigBase> OPTIONS = ImmutableList.of(
+                WEATHER, WEATHER_FORMAT, WEATHER_LINE_POSITION
+        );
+    }
+
     public static class ModIntegration {
         public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
         public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
@@ -125,6 +134,7 @@ public class Configs implements IConfigHandler {
                 JsonObject root = element.getAsJsonObject();
                 ConfigUtils.readConfigBase(root, "Generic", Configs.Generic.OPTIONS);
                 ConfigUtils.readConfigBase(root, "Colors", Configs.Colors.OPTIONS);
+                ConfigUtils.readConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
                 ConfigUtils.readConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             }
         }
@@ -136,6 +146,7 @@ public class Configs implements IConfigHandler {
             JsonObject root = new JsonObject();
             ConfigUtils.writeConfigBase(root, "Generic", Configs.Generic.OPTIONS);
             ConfigUtils.writeConfigBase(root, "Colors", Configs.Colors.OPTIONS);
+            ConfigUtils.writeConfigBase(root, "Vanilla", Configs.Vanilla.OPTIONS);
             ConfigUtils.writeConfigBase(root, "ModIntegration", Configs.ModIntegration.OPTIONS);
             JsonUtils.writeJsonToFile(root, new File(dir, CONFIG_FILE_NAME));
         }
