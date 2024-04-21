@@ -31,6 +31,11 @@ dependencies {
     modApi 'curse.maven:ftb-ultimine-386134:5204156' // neoforge-2004.1.0
     modApi 'maven.modrinth:mafglib:0.1.4-mc1.20.4' // 0.1.4-mc1.20.4
     modApi 'com.github.ThinkingStudios:ForgedNetworkingAPI:0.1.0-mc1.20.4'
+    modApi 'curse.maven:mekanism-268560:5257006' // 1.20.4-10.5.19.40
+    modApi 'curse.maven:mekanism-generators-268566:5257009' // 1.20.4-10.5.19.40
+    modApi 'curse.maven:serene-seasons-291874:5206533' // 1.20.4-9.3.0.25
+//    modApi 'curse.maven:natures-aura-306626:5220071' // 40.1 // 映射还是有问题
+    modApi files('libs/NaturesAura-40.1.jar')
 }
 
 processResources {

@@ -38,6 +38,17 @@ dependencies {
     modApi 'curse.maven:ftb-library-404465:5051953' // forge-2001.1.5
     modApi 'curse.maven:ftb-ultimine-386134:5005006' // forge-2001.1.4
     modApi 'curse.maven:mafglib-910766:5068815' // 0.1.8-mc1.20.1
+    modApi 'curse.maven:mekanism-268560:5125665' // 1.20.1-10.4.6.20
+    modApi 'curse.maven:mekanism-generators-268566:5125668' // 1.20.1-10.4.6.20
+    modApi 'curse.maven:serene-seasons-291874:3804257' // 1.18.2-7.0.0.15
+    modApi 'maven.modrinth:blood-magic:3.3.2-44' // 1.20.1-3.3.2-44
+    modApi 'curse.maven:patchouli-306770:4966125' // 1.20.1-84-FORGE
+    modApi 'curse.maven:mcjtylib-233105:4747680' // 1.20-8.0.3
+    modApi 'curse.maven:rftools-base-326041:4747681' // 1.20-5.0.2
+    modApi 'curse.maven:deep-resonance-233398:4979927' // 1.20-5.0.3
+//    modApi 'curse.maven:natures-aura-306626:4963590' // 39.4 // 映射继续出问题
+//    modApi 'de.ellpeck.naturesaura:NaturesAura:39.4' // maven 继续死
+    modApi files('libs/NaturesAura-39.4-api.jar')
 }
 
 processResources {

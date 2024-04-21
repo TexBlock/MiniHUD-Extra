@@ -15,6 +15,7 @@ dependencies {
     modApi 'curse.maven:malilib-303119:5096807' // fabric-1.20.4-0.18.1
     modApi 'curse.maven:minihud-244260:5096818' // fabric-1.20.4-0.30.2
     modApi 'maven.modrinth:modmenu:9.0.0'
+    modApi 'curse.maven:serene-seasons-291874:5206535' // 1.20.4-9.3.0.25
 }
 
 publishing {
