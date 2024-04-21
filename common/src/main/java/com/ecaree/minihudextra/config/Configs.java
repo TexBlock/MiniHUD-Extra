@@ -96,8 +96,12 @@ public class Configs implements IConfigHandler {
         public static final ConfigBoolean MEK_RADIATION_EXPOSURE = new ConfigBoolean("infoMekRadiationExposure", false, "Show the player's radiation exposure in Mekanism\nRequires Mekanism to be loaded");
         public static final ConfigString MEK_RADIATION_EXPOSURE_FORMAT = new ConfigString("infoMekRadiationExposureFormat", "Radiation Exposure: %1$s", "The format string for the Mek radiation exposure line");
         public static final ConfigInteger MEK_RADIATION_EXPOSURE_LINE_POSITION = new ConfigInteger("infoMekRadiationExposureLinePosition", 7, 0, 100, "The line position for Mek radiation exposure info");
+        public static final ConfigBoolean DEEP_RESONANCE_RADIATION = new ConfigBoolean("infoDeepResonanceRadiation", false, "Show the radiation around player in Deep Resonance\nRequires Deep Resonance to be loaded");
+        public static final ConfigString DEEP_RESONANCE_RADIATION_FORMAT = new ConfigString("infoDeepResonanceRadiationFormat", "Deep Resonance Radiation: %.2f", "The format string for the Deep Resonance radiation line");
+        public static final ConfigInteger DEEP_RESONANCE_RADIATION_LINE_POSITION = new ConfigInteger("infoDeepResonanceRadiationLinePosition", 8, 0, 100, "The line position for Deep Resonance radiation info");
         public static final ImmutableList<IConfigBase> OPTIONS = ImmutableList.of(
-                MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION);
+                MEK_RADIATION_EXPOSURE, MEK_RADIATION_EXPOSURE_FORMAT, MEK_RADIATION_EXPOSURE_LINE_POSITION,
+                DEEP_RESONANCE_RADIATION, DEEP_RESONANCE_RADIATION_FORMAT, DEEP_RESONANCE_RADIATION_LINE_POSITION);
     }
 
     @Override
