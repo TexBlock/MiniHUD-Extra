@@ -1,5 +1,6 @@
 package com.ecaree.minihudextra.integration.neoforge;
 
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.player.PlayerEntity;
 
 @SuppressWarnings("unused")
@@ -13,6 +14,6 @@ public class BloodMagicImpl {
     }
 
     public static String getOrbTierName(PlayerEntity player) {
-        return "Not available";
+        return I18n.translate("desc.minihudextra.not_available");
     }
 }
