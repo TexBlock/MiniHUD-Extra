@@ -92,6 +92,7 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    @SuppressWarnings("CommentedOutCode")
     public static class Vanilla {
         public static final ConfigBoolean WEATHER = new ConfigBoolean("infoWeather", false, "Show the weather");
         public static final ConfigString WEATHER_FORMAT = new ConfigString("infoWeatherFormat", "Weather: {WEATHER}", "The format string for the weather line\nThe supported placeholders are:\n{IS_RAINING}, {IS_THUNDERING}, {WEATHER}(weather name),\n{WEATHER_ABBR}(abbr of weather name)");
