@@ -9,6 +9,7 @@
     "vanilla.MixinRenderHandler"
   ],
   "mixins": [
+    "MixinInfoToggle",
     "bloodmagic.MixinRenderHandler",
     "deepresonance.MixinRenderHandler",
     "mek.MixinRenderHandler",

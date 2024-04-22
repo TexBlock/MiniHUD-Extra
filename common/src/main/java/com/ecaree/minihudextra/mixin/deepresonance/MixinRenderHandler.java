@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.deepresonance;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.integration.DeepResonanceRadiation;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
@@ -30,8 +31,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.DEEP_RESONANCE_RADIATION.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.DEEP_RESONANCE_RADIATION_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.DEEP_RESONANCE_RADIATION.getName())) {
                 try {
                     StringBuilder str;
                     str = new StringBuilder(128);
