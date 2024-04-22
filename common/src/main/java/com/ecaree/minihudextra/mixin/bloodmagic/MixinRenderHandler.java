@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.bloodmagic;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.integration.BloodMagic;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
@@ -30,8 +31,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.BLOOD_MAGIC.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.BLOOD_MAGIC_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.BLOOD_MAGIC.getName())) {
                 try {
                     String str = Configs.ModIntegration.BLOOD_MAGIC_FORMAT.getStringValue();
 

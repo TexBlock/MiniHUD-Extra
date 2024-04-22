@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.naturesaura;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.integration.NaturesAura;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
@@ -30,8 +31,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.NATURES_AURA.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.NATURES_AURA_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.NATURES_AURA.getName())) {
                 try {
                     StringBuilder str;
                     str = new StringBuilder(128);

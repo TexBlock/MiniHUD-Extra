@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.sereneseasons;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.integration.SereneSeasons;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
@@ -31,8 +32,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.SERENE_SEASONS.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.SERENE_SEASONS_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.SERENE_SEASONS.getName())) {
                 try {
                     String str = Configs.ModIntegration.SERENE_SEASONS_FORMAT.getStringValue();
 

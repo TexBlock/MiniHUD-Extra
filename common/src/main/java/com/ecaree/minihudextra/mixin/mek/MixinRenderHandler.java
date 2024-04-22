@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.mek;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.integration.MekRadiation;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
@@ -30,8 +31,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.ModIntegration.MEK_RADIATION_EXPOSURE.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.ModIntegration.MEK_RADIATION_EXPOSURE_LINE_POSITION.getIntegerValue()) { // 有无更好的实现方式？
+            if (toggle.getName().equals(MHExInfoToggle.MEK_RADIATION_EXPOSURE.getName())) { // 有无更更好的实现方式？
                 try {
                     StringBuilder str;
                     str = new StringBuilder(128);

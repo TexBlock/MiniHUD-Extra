@@ -1,6 +1,7 @@
 package com.ecaree.minihudextra.mixin.vanilla;
 
 import com.ecaree.minihudextra.config.Configs;
+import com.ecaree.minihudextra.config.MHExInfoToggle;
 import com.ecaree.minihudextra.util.ChunkLoadedHelper;
 import fi.dy.masa.minihud.config.InfoToggle;
 import fi.dy.masa.minihud.event.RenderHandler;
@@ -30,8 +31,7 @@ public abstract class MixinRenderHandler {
         if (entity == null || world == null || player == null) return;
 
         if (ChunkLoadedHelper.isChunkLoaded(entity, world)) {
-            if (Configs.Vanilla.MOON_PHASE.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.Vanilla.MOON_PHASE_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.MOON_PHASE.getName())) {
                 try {
                     String str = Configs.Vanilla.MOON_PHASE_FORMAT.getStringValue();
 
@@ -47,8 +47,7 @@ public abstract class MixinRenderHandler {
                 }
             }
 
-            if (Configs.Vanilla.WEATHER.getBooleanValue() &&
-                    toggle.getIntegerValue() == Configs.Vanilla.WEATHER_LINE_POSITION.getIntegerValue()) {
+            if (toggle.getName().equals(MHExInfoToggle.WEATHER.getName())) {
                 try {
                     String str = Configs.Vanilla.WEATHER_FORMAT.getStringValue();
 
