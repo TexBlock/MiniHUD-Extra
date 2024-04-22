@@ -25,7 +25,7 @@ Press Z + C in the game to open the config GUI.
     - [Deep Resonance](https://www.curseforge.com/minecraft/mc-mods/deep-resonance): Show radiation value around player.
     - [Mekanism](https://www.curseforge.com/minecraft/mc-mods/mekanism): Show player's radiation exposure.
     - [Nature's Aura](https://www.curseforge.com/minecraft/mc-mods/natures-aura): Show aura value around player.
-    - [Serene Seasons）](https://www.curseforge.com/minecraft/mc-mods/serene-seasons): Show the current season info.
+    - [Serene Seasons](https://www.curseforge.com/minecraft/mc-mods/serene-seasons): Show the current season info.
 
 ### Known issues
 - In the config menu, if the tooltip of a config item contains a format specifier like `%d`, it will cause a format error.
