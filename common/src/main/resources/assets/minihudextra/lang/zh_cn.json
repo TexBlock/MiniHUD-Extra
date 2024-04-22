@@ -183,7 +183,7 @@
   "infoSereneSeasons": "静谧四季信息",
   "Show the season info in Serene Seasons\nRequires Serene Seasons to be loaded": "显示 Serene Seasons 中季节的信息\n需要 Serene Seasons 被加载",
   "infoSereneSeasonsFormat": "静谧四季信息格式化",
-  "The format string for the Serene Seasons info line\nThe supported placeholders are:\n{DAY_OF_SEASON}, {DAY_OF_SUB_SEASON},\n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\n§eand placeholders in MiniHUD dateFormatMinecraft": "静谧四季信息的格式化字符串\n支持的占位符有：\n{DAY_OF_SEASON}(当前季节的第几天), {DAY_OF_SUB_SEASON}(当前子季节的第几天),\n{SEASON_NAME}(季节名称), {SUB_SEASON_NAME}(子季节名称),\n{TROPICAL_SEASON_NAME}(热带季节名称)\n§e以及 MiniHUD dateFormatMinecraft 中的占位符",
+  "The format string for the Serene Seasons info line\nThe supported placeholders are:\n{DAY_OF_SEASON}(the number of days elapsed in the current season),\n{DAY_OF_SUB_SEASON}(the number of days elapsed in the current sub season),\n{SEASON_NAME}, {SUB_SEASON_NAME}, {TROPICAL_SEASON_NAME}\n§eand placeholders in MiniHUD dateFormatMinecraft": "静谧四季信息的格式化字符串\n支持的占位符有：\n{DAY_OF_SEASON}(当前季节经过的天数),\n{DAY_OF_SUB_SEASON}(当前子季节经过的天数),\n{SEASON_NAME}(季节名称), {SUB_SEASON_NAME}(子季节名称),\n{TROPICAL_SEASON_NAME}(热带季节名称)\n§e以及 MiniHUD dateFormatMinecraft 中的占位符",
   "infoSereneSeasonsLinePosition": "静谧四季信息显示行数",
   "The line position for Serene Seasons info": "静谧四季信息的显示位置",
   "infoBloodMagic": "血魔法信息",
