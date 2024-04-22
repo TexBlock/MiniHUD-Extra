@@ -91,6 +91,7 @@ public class Configs implements IConfigHandler {
         );
     }
 
+    @SuppressWarnings("CommentedOutCode")
     public static class Vanilla {
         public static final ConfigBoolean MOON_PHASE = new ConfigBoolean("infoMoonPhase", false, "Show the moon phase");
         public static final ConfigString MOON_PHASE_FORMAT = new ConfigString("infoMoonPhaseFormat", "Moon Phase: {MOON_PHASE}, {MOON_PHASE_NAME}", "The format string for the moon phase line\nThe supported placeholders are:\n{MOON_PHASE_1}(starts the counter from 1),\n{MOON_PHASE}(starts the counter from 0), {MOON_PHASE_NAME}");
