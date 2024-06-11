@@ -26,11 +26,11 @@ dependencies {
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionNeoForge")) { transitive = false }
 
-    modApi 'curse.maven:bocchud-916504:5122675' // 0.1.0-mc1.20.4
+    modApi "maven.modrinth:bocchud:0.1.2-mc1.20.4" // 0.1.2-mc1.20.4
     modApi 'curse.maven:ftb-library-404465:5205161' // neoforge-2004.2.1
     modApi 'curse.maven:ftb-ultimine-386134:5204156' // neoforge-2004.1.0
-    modApi 'maven.modrinth:mafglib:0.1.4-mc1.20.4' // 0.1.4-mc1.20.4
-    modApi 'com.github.ThinkingStudios:ForgedNetworkingAPI:0.1.0-mc1.20.4'
+    modApi 'maven.modrinth:mafglib:0.1.8-mc1.20.4' // 0.1.8-mc1.20.4
+    modApi 'maven.modrinth:forged-networking-api:0.1.2+mc1.20.4'
     modApi 'curse.maven:mekanism-268560:5257006' // 1.20.4-10.5.19.40
     modApi 'curse.maven:mekanism-generators-268566:5257009' // 1.20.4-10.5.19.40
     modApi 'curse.maven:glitchcore-955399:5088442' // NeoForge 1.20.4-1.0.0.59
